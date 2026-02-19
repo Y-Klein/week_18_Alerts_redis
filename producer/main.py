@@ -1,9 +1,12 @@
 from redis_connection import get_con
 from priority_logic import get_data as file
+import json
 r = get_con()
 
 for doc in file():
     if doc["priority"] == "URGENT":
-        r.lpush("queue_urgent",doc)
+        j = json.dumps(doc)
+        r.lpush("queue_urgent",j)
     else:
-        r.lpush("queue_normal",doc)
+        j = json.dumps(doc)
+        r.lpush("queue_normal",j)
