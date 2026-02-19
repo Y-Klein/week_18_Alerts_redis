@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from dal import *
 
 
 app = FastAPI()
@@ -6,12 +7,14 @@ app = FastAPI()
 
 @app.get("/analytics/alerts-by-border-and-priority")
 def alerts_by_border_and_priority():
-    return "😊"
+    result = q1()
+    return result
 
 
 @app.get("/analytics/top-urgent-zones")
 def top_urgent_zones():
-    return "😊"
+    result = q2()
+    return result
 
 
 @app.get("/analytics/distance-distribution")
