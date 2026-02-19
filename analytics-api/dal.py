@@ -53,5 +53,23 @@ def q2():
         a.append(max(zones.values()))
 
     return a
-d
+
+
+def q3():
+    distance_from_fence = {"A":0,"B":0,"C":0}
+    all_alerts = col.find()
+    for alert in all_alerts:
+        if alert["distance_from_fence_m"] <= 300:
+            distance_from_fence["A"] += 1
+        elif 300 < alert["distance_from_fence_m"] <= 800:
+            distance_from_fence["B"] += 1
+        elif 800 < alert["distance_from_fence_m"] <= 1500:
+            distance_from_fence["C"] += 1
+    return distance_from_fence
+
+
+
+
+
+
 

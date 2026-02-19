@@ -19,7 +19,8 @@ def top_urgent_zones():
 
 @app.get("/analytics/distance-distribution")
 def distance_distribution():
-    return "😊"
+    result = q3()
+    return result
 
 @app.get("/analytics/low-visibility-high-activity")
 def low_visibility_high_activity():
